@@ -114,10 +114,12 @@ function onUpdate(element) {
             '<button onclick="onDelete(this)" class="btn btn-danger">Delete</button>'
 
         ];
+        
+        console.log( dataSet[ updateIndex ] );
         dataSet[ updateIndex ] = row;
         // const deletedRow = dataSet.splice(updateIndex, 1, row);
         // console.log(deletedRow);
-        console.log(dataSet);
+        console.log('Dataset :',dataSet);
 
         let table = $('#example').DataTable();
         table.clear();
