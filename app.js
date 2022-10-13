@@ -1,29 +1,4 @@
 
-//  function addButtonFunction ( element ) {
-//      let tr = element.parentElement.parentElement
-//      const nodes = tr.childNodes
-
-//      let index = tr.firstChild.textContent
-
-//      const [ id, name, age, skill, address, designation ] = nodes;
-
-//      document.getElementById( "name2" ).value = name.textContent;
-//      document.getElementById( "age2" ).value = age.textContent;
-//      document.getElementById( "skill2" ).value = skill.textContent;
-//      document.getElementById( "address2" ).value = address.textContent;
-//      document.getElementById( "designation2" ).value = designation.textContent;
-    
-//      $( '#updatebtn' ).click( function () {
-//          $( "#staticBackdrop2" ).modal( 'hide' );
-
-//          let updateIndex = dataSet.findIndex( ( items ) => {
-
-//              return index == items[ 0 ];
-//          } )
-//      })
-
-// }
-
 let dataSet = [
     ['1', 'Nambi Rajan', '22', 'Javascript', 'Qantler', 'Trainee', '<button class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="onUpdate(this)">Update</button>', '<button onclick="onDelete(this)" class="btn btn-danger">Delete</button>'],
     ['2', 'Nantha Kumar', '21', 'Javascript', 'Qantler', 'Trainee', '<button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="onUpdate(this)">Update</button>', '<button onclick="onDelete(this)" class="btn btn-danger">Delete</button>'],
