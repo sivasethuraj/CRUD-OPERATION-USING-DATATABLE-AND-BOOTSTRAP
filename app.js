@@ -4,6 +4,7 @@ let dataSet = [
     ['2', 'Nantha Kumar', '21', 'Javascript', 'Qantler', 'Trainee', '<button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="onUpdate(this)">Update</button>', '<button onclick="onDelete(this)" class="btn btn-danger">Delete</button>'],
     ['3', 'Sanjivi Kumar', '21', 'Javascript', 'Qantler', 'Trainee', '<button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="onUpdate(this)">Update</button>', '<button onclick="onDelete(this)" class="btn btn-danger">Delete</button>']];
 
+    
 $(document).ready(function () {
     $('#example').DataTable({
         data: dataSet, columns: [
