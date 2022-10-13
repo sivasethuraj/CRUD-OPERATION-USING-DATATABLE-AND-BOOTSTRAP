@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD OPERATION :</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css" />
+
+    <link rel="stylesheet" href="datatables.min.css" />
+
+    <link rel="stylesheet" href="./datatables.css" />
+    <link
+      rel="stylesheet"
+      href="./DataTables-1.12.1/css/jquery.dataTables.min.css"
+    />
+  </head>
+  <body>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" id="staticBackdropLabel"></div>
+          <div class="modal-body">
+            <!--  -->
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="name" class="form-label">Name</label>
+              </div>
+              <div class="col-9">
+                <input
+                  type="text"
+                  id="name"
+                  autocomplete="off"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="age" class="form-label">Age</label>
+              </div>
+              <div class="col-9">
+                <input
+                  type="text"
+                  id="age"
+                  autocomplete="off"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="skill" class="form-label">skill</label>
+              </div>
+              <div class="col-9">
+                <input
+                  type="text"
+                  autocomplete="off"
+                  id="skill"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="address" class="form-label">Address </label>
+              </div>
+              <div class="col-9">
+                <input
+                  type="text"
+                  autocomplete="off"
+                  id="address"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-3">
+                <label for="designation" class="form-label">Designation</label>
+              </div>
+              <div class="col-9">
+                <input
+                  type="text"
+                  id="designation"
+                  autocomplete="off"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <!--  -->
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="onFormSubmit()"
+            >
+              Add
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              onclick="resetForm()"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end of 1st modal -->
+
+    <!--2nd modal  -->
+    <div
+      class="modal fade"
+      id="staticBackdrop2"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" id="staticBackdropLabel"></div>
+          <div class="modal-body">
+            <!--  -->
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="name2" class="form-label">Name</label>
+              </div>
+              <div class="col-9">
+                <input type="text" id="name2" class="form-control" />
+              </div>
+            </div>
+
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="age2" class="form-label">Age</label>
+              </div>
+              <div class="col-9">
+                <input type="text" id="age2" class="form-control" />
+              </div>
+            </div>
+
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="skill2" class="form-label">skill</label>
+              </div>
+              <div class="col-9">
+                <input type="text" id="skill2" class="form-control" />
+              </div>
+            </div>
+
+            <div class="row my-2">
+              <div class="col-3">
+                <label for="address2" class="form-label">Address </label>
+              </div>
+              <div class="col-9">
+                <input type="text" id="address2" class="form-control" />
+              </div>
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-3">
+                <label for="designation2" class="form-label">Designation</label>
+              </div>
+              <div class="col-9">
+                <input type="text" id="designation2" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="modal-footer d-flex justify-content-center">
+            <button
+              type="button"
+              class="btn btn-success"
+              id="updatebtn"
+              onclick="onUpdatedValue(this)"
+            >
+              Add
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              onclick="resetForm()"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of 2nd modal  -->
+
+    <div class="container-fluid">
+      <div class="container-fluid">
+        <div class="card bg-light mt-3 pt-4 pb-4 px-3">
+          <div class="card-body">
+            <h1>Dynamic Table</h1>
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <button
+            class="btn btn-success col-2 mt-2 me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            Add Employee
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <table
+          id="example"
+          class="table table-striped table-bordered table-responsive"
+          style="width: 100%"
+        ></table>
+      </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="./DataTables-1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="./datatables.min.js"></script>
+    <script src="./dataTables.bootstrap5.min.js"></script>
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
