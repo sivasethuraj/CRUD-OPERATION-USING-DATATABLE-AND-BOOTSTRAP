@@ -147,6 +147,7 @@ function onUpdate(element) {
         let table = $('#example').DataTable();
         table.clear();
         table.rows.add(dataSet).draw();
+	$( this ).off( 'click' );   
         
         
     });

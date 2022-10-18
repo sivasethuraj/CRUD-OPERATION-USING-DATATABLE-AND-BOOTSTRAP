@@ -64,12 +64,16 @@ function onDelete(element) {
     let tr = element.parentElement.parentElement
     let index = tr.firstChild.textContent
     // tr.remove()
-    console.log(index);
+    console.log( index );
+    let updateIndex = dataSet.findIndex( ( items ) => {
 
-    let removeIndex = parseInt(index) - 1;
-    const removedArray = dataSet.splice(removeIndex, 1);
-    console.log(removedArray);
-    console.log(dataSet);
+        return index == items[ 0 ];
+    } )
+
+    // let removeIndex = parseInt(index) - 1;
+    const removedArray = dataSet.splice(updateIndex, 1);
+    console.log('removedArray:',removedArray);
+    console.log('dataSet: ',dataSet);
     table.clear();
     table.rows.add(dataSet).draw();
 }
